@@ -25,6 +25,7 @@ services:
       DB_HOST: db
       DB_PORT: 5432
       DB_NAME: taller_db
+      PYTHONPATH: /app
     ports:
       - "8001:8000"
     depends_on:
