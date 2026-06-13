@@ -71,3 +71,7 @@ def get_task(task_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Tarea no encontrada")
 
     return task
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok", "message": "La aplicacion esta activa"}

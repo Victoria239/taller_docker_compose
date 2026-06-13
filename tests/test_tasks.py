@@ -44,3 +44,10 @@ def test_get_task_by_id():
     assert response.status_code == 200
     assert response.json()["id"] == task_id
     assert response.json()["title"] == "Buscar tarea por ID"
+
+
+def test_health_check():
+    response = client.get("/health")
+    assert response.status_code == 200
+    assert response.json()["status"] == "ok"
+    assert response.json()["message"] == "La aplicacion esta activa"
